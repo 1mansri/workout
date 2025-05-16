@@ -29,3 +29,5 @@ mongoose.connect(process.env.MONGO_URI)
     .catch((error) => {
         console.log(error)
     })
+app.use('/.netlify/functions/server', workoutRoutes);
+module.exports.handler = serverless(app);
